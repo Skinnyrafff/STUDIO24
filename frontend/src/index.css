@@ -1,0 +1,63 @@
+:root {
+  /* Tipografía elegante */
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  font-weight: 400;
+
+  /* Paleta de colores */
+  --color-background: #FFFFFF; /* Blanco */
+  --color-text: #000000;       /* Negro */
+  --color-accent: #f1f3f5;    /* Gris claro */
+  --color-accent-dark: #e9ecef; /* Un gris un poco más oscuro para hover */
+
+  color: var(--color-text);
+  background-color: var(--color-background);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  padding-top: 2rem;
+}
+
+#root {
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* Estilos para la navegación */
+nav {
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--color-accent);
+  padding-bottom: 1rem;
+}
+
+nav a {
+  font-weight: 600;
+  color: var(--color-text);
+  text-decoration: none;
+  margin: 0 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+nav a:hover, nav a.active {
+  background-color: var(--color-accent);
+}
+
+h1 {
+  font-size: 2.8em;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}

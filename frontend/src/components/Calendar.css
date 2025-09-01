@@ -1,0 +1,130 @@
+.calendar-container {
+  width: 100%;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.calendar-header {
+  display: grid;
+  grid-template-columns: 80px repeat(6, 1fr); /* Columna para la hora + 6 días */
+  background-color: #f8f9fa;
+  font-weight: 600;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.day-header, .time-column-header {
+  padding: 0.75rem 0;
+  text-align: center;
+  border-left: 1px solid #e0e0e0;
+}
+
+.time-column-header {
+  border-left: none;
+}
+
+.calendar-body {
+  display: grid;
+  grid-template-columns: 80px 1fr; /* Columna de hora + área de la cuadrícula */
+}
+
+.time-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.time-label {
+  height: 60px; /* Altura de cada celda de hora */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85em;
+  color: #5f6368;
+  border-top: 1px solid #e0e0e0;
+}
+
+.time-label:first-child {
+  border-top: none;
+}
+
+.schedule-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); /* 6 días */
+  border-left: 1px solid #e0e0e0;
+}
+
+.day-column {
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #e0e0e0;
+}
+
+.day-column:last-child {
+  border-right: none;
+}
+
+.grid-cell {
+  height: 60px;
+  border-top: 1px solid #e0e0e0;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.day-column .grid-cell:first-child {
+    border-top: none;
+}
+
+.grid-cell.available:hover {
+  background-color: #e8f0fe; /* Azul claro en hover */
+}
+
+.grid-cell.available {
+  background-color: var(--color-accent); /* Crema */
+}
+
+.grid-cell.booked {
+  background-color: rgba(220, 20, 60, 0.7); /* Rojo (Crimson) con opacidad */
+  color: #fff;
+  cursor: not-allowed;
+}
+/* Estilos para las acciones de las celdas */
+.grid-cell {
+  position: relative; /* Necesario para posicionar los botones */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cell-actions {
+  opacity: 0; /* Oculto por defecto */
+  transition: opacity 0.2s ease-in-out;
+}
+
+.grid-cell:hover .cell-actions {
+  opacity: 1; /* Visible en hover */
+}
+
+.action-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5em; /* Tamaño del icono */
+  line-height: 1;
+  padding: 0.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.action-btn.add-btn {
+  color: #28a745; /* Verde */
+}
+
+.action-btn.delete-btn {
+  color: #dc3545; /* Rojo */
+}
+
+.action-btn:hover {
+  transform: scale(1.2);
+}
